@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mosinstall type="template">
+	<name>kubrick</name>
+	<creationDate>24.12.04</creationDate>
+	<author>Design by Michael Heilemann Ported to Mambo by Alex Sancho</author>
+	<copyright>Design from Kubrick Template by Michael Heilemann Ported to Mambo by Alex Sancho</copyright>
+	<authorEmail>Design by Michael Heilemann Ported to Mambo by Alex Sancho</authorEmail>
+	<authorUrl>Design from binarybonsai.com by Michael Heilemann Ported to Mambo by Alex Sancho www.psychiatric.com.ar</authorUrl>
+	<version>1.26</version>
+	<description>Kubrick Template [2col,white-grey]</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>mysplitcssmenu.php</filename>
+		<filename>template.php</filename>		
+		<filename>template_thumbnail.png</filename>
+	</files>
+	<images>
+		<filename>images/kubrickbg.jpg</filename>
+		<filename>images/kubrickbgcolor.jpg</filename>
+		<filename>images/kubrickbgwide.jpg</filename>
+		<filename>images/kubrickfooter.jpg</filename>
+		<filename>images/kubrickheader.jpg</filename>
+		<filename>images/kubricklogo.jpg</filename>
+		<filename>images/kubrickportrait.png</filename>
+	</images>
+	<css>
+		<filename>css/layer.css</filename>
+		<filename>css/mambo.css</filename>
+		<filename>css/menu.css</filename>
+		<filename>css/template_css.css</filename>
+	</css>
+</mosinstall>

@@ -1,0 +1,48 @@
+#subheader #navcontainer {
+	padding: 35px 0 0;
+}
+#subheader #navcontainer {
+	font-size: 100%;
+	line-height: 16px;
+}
+#subheader #navcontainer #navlist {
+	margin: 0 20px;
+	margin-bottom: 2px;
+	padding: 0 0 20px 10px;
+	border-bottom: 1px solid #FAFAFA;
+}
+#subheader #navcontainer #navlist ul, #subheader #navcontainer #navlist li {
+	margin: 0;
+	padding: 0;
+	display: inline;
+	list-style-type: none;
+}
+#subheader #navcontainer #navlist a:link, #subheader #navcontainer #navlist a:visited {
+	float: left;
+	text-align: center;
+	line-height: 14px;
+	margin: 0 10px 4px;
+	text-decoration: none;
+	color: #FAFAFA;
+	padding: 0.2em;
+}
+#subheader #navcontainer #navlist a#current, #subheader #navcontainer #navlist a#subcurrent {
+	color: #FAFAFA;
+	border-bottom: 4px solid #FAFAFA;
+	padding-bottom: 2px;
+}
+#subheader #navcontainer #navlist a:hover {
+	color: #FAFAFA;
+	padding-bottom: 2px;
+	border-bottom: 4px solid #FAFAFA;
+}
+#sidebar #subnavcontainer .small {
+	font-size: 12px;
+	font-weight: bold;
+}
+#sidebar #subnavcontainer #subnavlist li a:link, #sidebar #subnavcontainer #subnavlist li a:visited {
+	position: relative;
+}
+#sidebar #subnavcontainer #subnavlist li a:hover, #sidebar #subnavcontainer #subnavlist li a#subcurrent:hover {
+	text-decoration: none;
+}
