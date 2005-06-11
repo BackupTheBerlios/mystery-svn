@@ -68,7 +68,7 @@ namespace Engine.Core.Utility
 		/// <summary>
 		///     Write a message to the log.
 		/// </summary>
-		/// <param name="message">should it write the message to the Command Line</param>
+		/// <param name="DebugOutput">should it write the message to the Command Line</param>
 		/// <param name="message">Message to write, which can include string formatting tokens.</param>
 		/// <param name="substitutions">
 		///     When message includes string formatting tokens, these are the values to
