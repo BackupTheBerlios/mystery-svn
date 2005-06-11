@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DNPreBuild xmlns="http://dnpb.sourceforge.net/schemas/dnpb-1.4.xsd">
+	<Solution name="MysteryEngine"> 
+		<Configuration name="Debug">
+			<Options>
+				<?if OS = "Win32" ?>
+					<CompilerDefines>DEBUG;TRACE;WIN32</CompilerDefines>
+				<?else ?>
+					<CompilerDefines>DEBUG;TRACE;POSIX</CompilerDefines>
+				<?endif ?>
+				<OptimizeCode>false</OptimizeCode>
+				<CheckUnderflowOverflow>false</CheckUnderflowOverflow>
+				<AllowUnsafe>false</AllowUnsafe>
+				<WarningLevel>4</WarningLevel>   
+				<WarningsAsErrors>true</WarningsAsErrors>
+				<SupressWarnings>1591;219;1573;1572;168</SupressWarnings> 
+				<OutputPath>../bin/Debug</OutputPath>
+				<DebugInformation>true</DebugInformation>
+				<RegisterCOMInterop>false</RegisterCOMInterop>
+				<IncrementalBuild>true</IncrementalBuild>
+				<BaseAddress>285212672</BaseAddress>
+				<FileAlignment>4096</FileAlignment>
+				<NoStdLib>false</NoStdLib>
+				<XmlDocFile>Docs.xml</XmlDocFile>
+			</Options>
+		</Configuration>
+		<Configuration name="Release"> 
+			<Options>
+				<CompilerDefines>TRACE</CompilerDefines>
+				<OptimizeCode>true</OptimizeCode>
+				<CheckUnderflowOverflow>false</CheckUnderflowOverflow>
+				<AllowUnsafe>false</AllowUnsafe>
+				<WarningLevel>4</WarningLevel>
+				<WarningsAsErrors>false</WarningsAsErrors>
+				<SupressWarnings>1591;219;1573;1572;168</SupressWarnings>
+				<OutputPath>../bin/Release</OutputPath>
+				<DebugInformation>false</DebugInformation>
+				<RegisterCOMInterop>false</RegisterCOMInterop>
+				<IncrementalBuild>true</IncrementalBuild>
+				<BaseAddress>285212672</BaseAddress>
+				<FileAlignment>4096</FileAlignment>
+				<NoStdLib>false</NoStdLib>
+				<XmlDocFile>Docs.xml</XmlDocFile>				
+			</Options>
+		</Configuration>
+		<Project name="CoreEngine" path="" type="Library" assemblyName="CoreEngine" rootNamespace="Engine.Core">
+			<Configuration name="Debug">
+				<Options>
+					<OutputPath>bin/CoreEngine/Debug</OutputPath>
+					<XmlDocFile>CoreEngine.xml</XmlDocFile>
+				</Options>
+			</Configuration>
+			<Configuration name="Release">
+				<Options>
+					<OutputPath>bin/CoreEngine/Release</OutputPath>
+					<XmlDocFile>CoreEngine.xml</XmlDocFile>
+				</Options>
+			</Configuration>
+			<ReferencePath>bin</ReferencePath>
+			<Reference name="System"/>
+			<Files>
+				<Match path="src/CoreEngine" pattern="*.cs" recurse="true"/>
+			</Files>
+		</Project>
+		<Project name="Test" path="" type="Exe" assemblyName="Test" rootNamespace="Test">
+			<Configuration name="Debug">
+				<Options>
+					<OutputPath>bin/Test/Debug</OutputPath>
+					<XmlDocFile>Test.xml</XmlDocFile>
+				</Options>
+			</Configuration>
+			<Configuration name="Release">
+				<Options>
+					<OutputPath>bin/Test/Release</OutputPath>
+					<XmlDocFile>Test.xml</XmlDocFile>		
+				</Options>
+			</Configuration>
+			<ReferencePath>bin</ReferencePath>
+			<Reference name="System"/> 
+			<Reference name="CoreEngine"/> 
+			<Files>
+				<Match path="src/Test" pattern="*.cs" recurse="true"/>
+			</Files>
+		</Project>
+	</Solution>
+</DNPreBuild>
