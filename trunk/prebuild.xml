@@ -14,7 +14,7 @@
 				<WarningLevel>4</WarningLevel>   
 				<WarningsAsErrors>true</WarningsAsErrors>
 				<SupressWarnings>1591;219;1573;1572;168</SupressWarnings> 
-				<OutputPath>../bin/Debug</OutputPath>
+				<OutputPath>bin/Debug</OutputPath>
 				<DebugInformation>true</DebugInformation>
 				<RegisterCOMInterop>false</RegisterCOMInterop>
 				<IncrementalBuild>true</IncrementalBuild>
@@ -33,7 +33,7 @@
 				<WarningLevel>4</WarningLevel>
 				<WarningsAsErrors>false</WarningsAsErrors>
 				<SupressWarnings>1591;219;1573;1572;168</SupressWarnings>
-				<OutputPath>../bin/Release</OutputPath>
+				<OutputPath>bin/Release</OutputPath>
 				<DebugInformation>false</DebugInformation>
 				<RegisterCOMInterop>false</RegisterCOMInterop>
 				<IncrementalBuild>true</IncrementalBuild>
@@ -43,7 +43,7 @@
 				<XmlDocFile>Docs.xml</XmlDocFile>				
 			</Options>
 		</Configuration>
-		<Project name="CoreEngine" path="" type="Library" assemblyName="CoreEngine" rootNamespace="Engine.Core">
+		<Project name="CoreEngine" path="." type="Library" assemblyName="CoreEngine" rootNamespace="Engine.Core">
 			<Configuration name="Debug">
 				<Options>
 					<OutputPath>bin/CoreEngine/Debug</OutputPath>
@@ -62,7 +62,7 @@
 				<Match path="src/CoreEngine" pattern="*.cs" recurse="true"/>
 			</Files>
 		</Project>
-		<Project name="Test" path="" type="Exe" assemblyName="Test" rootNamespace="Test">
+		<Project name="Test" path="." type="Exe" assemblyName="Test" rootNamespace="Test">
 			<Configuration name="Debug">
 				<Options>
 					<OutputPath>bin/Test/Debug</OutputPath>
