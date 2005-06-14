@@ -1,1 +1,2 @@
-dnpb /clean /removedir obj /pause
+@ECHO OFF
+.\dnpb\dnpb.exe /clean /removedir obj /pause
