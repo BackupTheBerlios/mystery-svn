@@ -1,1 +1,1 @@
-dnpb/dnpb /target sharpdev  /file prebuild.xml /pause
+dnpb/dnpb /target sharpdev  /file mysbuild.xml /pause

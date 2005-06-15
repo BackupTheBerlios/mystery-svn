@@ -1,2 +1,2 @@
 @ECHO OFF
-.\dnpb\dnpb.exe /clean /removedir obj /pause
+.\dnpb\dnpb.exe /clean /removedir obj /file mysbuild.xml /pause
