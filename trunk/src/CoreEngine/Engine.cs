@@ -4,6 +4,9 @@ using Engine.Core.Plugin;
 
 namespace Engine.Core
 {
+    /// <summary>
+    ///  The Core Engine class by which almost all functionality is accessed
+    /// </summary>
 	public class MEngine
 	{
 		/// <summary>
@@ -11,40 +14,100 @@ namespace Engine.Core
 		/// </summary>
 		public I_RenderingSystem Renderer;
 
+        /// <summary>
+        /// The Platform Manager plugin
+        /// </summary>
+        public I_PlatformManager Platmgr;
+
+        /// <summary>
+        ///  The plug-in manager
+        /// </summary>
+        public PluginManager PlugMan;
+
+        /// <summary>
+        ///  Initialization flags pertaining to the start-up of the engine
+        /// </summary>
+        public enum Init_Flags
+        {
+            /// <summary>
+            /// A flag letting the engine know that graphics should be initialized
+            /// </summary>
+            Graphics,
+
+            /// <summary>
+            /// A flag letting the engine know that the sound system should be initialized
+            /// </summary>
+            Sound
+        }
+
+        /// <summary>
+        ///  Initializes the Mystery Engine
+        /// </summary>
+        /// <param name="init">Init_Flags telling the engine what should be initialized</param>
+        /// <returns>A bool value containing whether or not the initailization succeeded</returns>
+        public bool Initialize_Engine(Init_Flags init)
+        {
+            LogManager.DWriteLog("Intializing Mystery Engine \n");
+
+            LogManager.DWriteLog("******************************");
+
+            Initialize_PluginSystem();
+
+            LogManager.DWriteLog("\n Loading Plugins ... \n");
+
+            switch (init)
+            {
+                default:
+                    throw new Exception("Please use the Proper Initialization Flags");
+                case Init_Flags.Graphics:
+                    Initialize_PlatformManager();
+                    Initialize_GraphicsSystem();
+                    break;
+            }
+
+
+            LogManager.DWriteLog("\n Plugins Loaded \n");
+
+            LogManager.DWriteLog("******************************");
+
+            LogManager.DWriteLog("\nMystery Engine successfully initialized! \n");
+
+            return true;
+        }
+
 		/// <summary>
-		/// Intializes the Core Engine
+		/// Intializes the Plugin System
 		/// </summary>
-		public void Initialize_Engine()
+		private void Initialize_PluginSystem()
 		{
-			LogManager.DWriteLog("Intializing Mystery Engine \n");
+            try
+            {
+                LogManager.DWriteLog("\nInitializing Plugin Manager \n");
+                PlugMan = new PluginManager();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Plugin manager could not ne initialized: {0}", e);
+            }
 
-			LogManager.DWriteLog("******************************");
+            LogManager.DWriteLog("Plugin Manager initailized");
 
-			#region Initialize_Plugins
-
-			PluginManager PlugMan;
-			
-			PlugMan = new PluginManager();
-
-			try
-			{
-				LogManager.DWriteLog("\n Loading Plugins ... \n");
-				Renderer = (I_RenderingSystem)PlugMan.LoadPlugin("OGL_Renderer.dll");
-			}
-
-			catch (System.Exception e)
-			{
-				LogManager.DWriteLog("\t \t Plugin Manager could not load Plugins: {0}", e);
-				throw new System.Exception("\t \t Plugin Manager could not load Plugins: {0}", e);
-			}
-
-			LogManager.DWriteLog("\n Plugins Loaded \n");
-
-			#endregion Initialize_Plugins
-
-			LogManager.DWriteLog("******************************");
-
-			LogManager.DWriteLog("\nMystery Engine successfully initialized! \n");
 		}
+
+        /// <summary>
+        ///  Initializes the Graphics subsystem from a plug-in
+        /// </summary>
+        private void Initialize_GraphicsSystem()
+        {
+            Renderer = (I_RenderingSystem)PlugMan.LoadPlugin("OGL_Renderer.dll");
+        }
+
+        /// <summary>
+        ///  Initializes the PlatformManager from a plug-in
+        /// </summary>
+        private void Initialize_PlatformManager()
+        {
+            Platmgr = (I_PlatformManager)PlugMan.LoadPlugin("SDL_PlatformManager.dll");
+        }
 	}
 }

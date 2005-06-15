@@ -63,7 +63,7 @@ namespace Engine.Core.Utility
 		/// <param name="message">
 		/// A string that is printed to the log
 		/// </param>
-		/// <param name="substitiutions">
+        /// <param name="substitutions">
 		/// Things to substitute into the message such as variables
 		/// </param>
 		static public void WriteLog(string message, params object[] substitutions)
@@ -77,7 +77,7 @@ namespace Engine.Core.Utility
 		/// <param name="message">
 		/// A string that is printed to the log
 		/// </param>
-		/// <param name="substitiutions">
+        /// <param name="substitutions">
 		/// Things to substitute into the message such as variables
 		/// </param>
 		static public void DWriteLog(string message, params object[] substitutions)

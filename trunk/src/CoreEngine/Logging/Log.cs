@@ -4,7 +4,9 @@ using System.IO;
 
 namespace Engine.Core.Utility
 {
-	
+	/// <summary>
+	///  hm
+	/// </summary>
 	public sealed class Log : IDisposable
 	{
 		#region Fields
@@ -68,7 +70,7 @@ namespace Engine.Core.Utility
 		/// <summary>
 		///     Write a message to the log.
 		/// </summary>
-		/// <param name="DebugOutput">should it write the message to the Command Line</param>
+        /// <param name="DebugOutput">should it write the message to the Command Line</param>
 		/// <param name="message">Message to write, which can include string formatting tokens.</param>
 		/// <param name="substitutions">
 		///     When message includes string formatting tokens, these are the values to
@@ -105,6 +107,9 @@ namespace Engine.Core.Utility
 		
 		#region IDisposable_Members
 		
+        /// <summary>
+        ///  Closes the log writer
+        /// </summary>
 		public void Dispose()
 		{
 			writer.Close();

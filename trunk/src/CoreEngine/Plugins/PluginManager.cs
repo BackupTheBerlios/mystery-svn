@@ -6,10 +6,16 @@ using Engine.Core.Utility;
 
 namespace Engine.Core.Plugin
 {
+    /// <summary>
+    ///  A Plug-in manager which helps load and manage plug-ins
+    /// </summary>
 	public class PluginManager
 	{
-		public PluginManager(){}
-
+        /// <summary>
+        ///  Loads the specified plug-in
+        /// </summary>
+        /// <param name="DllFile">What plugin should be loaded</param>
+        /// <returns>The plug-in that was loaded</returns>
 		public object LoadPlugin(string DllFile)
 		{
 			object Plug;
