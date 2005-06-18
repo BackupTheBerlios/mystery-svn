@@ -19,10 +19,10 @@ namespace Test
 
 			v1 = new Vector3(27, 45, 23);
 			v2 = new Vector3(17, 35, 15);
-
+            //Image_Loader.Get_CopyRight();
 			MEngine me = new MEngine();
-			me.Initialize_Engine();
-			me.Renderer.ClearScreen(67);
+            me.Initialize_Engine(MEngine.Init_Flags.Graphics);
+            me.Platmgr.CreateWindow("MysteryEngine Window", 800, 600, 32, false);
 		}
 		static void Main(string[] args)
 		{
