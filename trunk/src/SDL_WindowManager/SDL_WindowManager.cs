@@ -12,14 +12,15 @@ namespace SDL_PlatformManager
         private IntPtr Window;
 
         /// <summary>
-		/// Sets the video mode of a fullscreen application
-		/// </summary>
-		/// <param name="Width">screen width</param>
-		/// <param name="Height">screen height</param>
-		/// <param name="BitsPerPixel">bits per pixel</param>
-		/// <param name="FullScreen">do you want the window to be fullscreen</param>
-		/// <returns>A bool</returns>
-		public bool CreateWindow(int Width, int Height, int BitsPerPixel, bool FullScreen)
+        ///  Creates a new window
+        /// </summary>
+        /// <param name="WindowCaption">The string holding the title of the window</param>
+        /// <param name="Width">The width of the window</param>
+        /// <param name="Height">The height of the window</param>
+        /// <param name="BitsPerPixel">The number of color bits per pixel in the window</param>
+        /// <param name="FullScreen">A bool value containing wheter or not the window should be fullscreen</param>
+        /// <returns>If it was successful</returns>
+		public bool CreateWindow(string WindowCaption, int Width, int Height, int BitsPerPixel, bool FullScreen)
 		{
             bool quit = false;
 
@@ -38,6 +39,10 @@ namespace SDL_PlatformManager
                 {
                     Console.WriteLine("Window Could not be created");
                 }
+
+                TS.SDL_WM_SetCaption(WindowCaption, "");
+
+                TS.SDL_WM_GrabInput(0);
 
                 while (quit == false)
                 {
