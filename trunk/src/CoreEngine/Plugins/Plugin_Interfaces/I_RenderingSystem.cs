@@ -13,5 +13,7 @@ namespace Engine.Core.Plugin
         /// <param name="RGB">The RGB value to clear the window to</param>
         /// <returns>If it was successful in clearing the winddow</returns>
 		bool ClearScreen(int RGB);
+
+        bool Setup();
 	}
 }

@@ -48,6 +48,7 @@ namespace Engine.Core.Utility
 		/// Create an static instance of the LogManager so only one Log is created
 		/// </summary>
 		static LogManager logman = new LogManager();
+
 		/// <summary>
 		/// Create a new log object
 		/// </summary>
