@@ -140,9 +140,11 @@
 					<XmlDocFile>OGL_Renderer.xml.xml</XmlDocFile>
 				</Options>
 			</Configuration>
-			<ReferencePath>bin</ReferencePath>
+			<ReferencePath>bin/Test/Release</ReferencePath>
 			<Reference name="System"/>
-			<Reference name="CoreEngine"/> 
+			<Reference name="CoreEngine.dll"/> 
+			<Reference name="Tao.OpenGl.dll"/>
+			<Reference name="Tao.OpenGl.ExtensionLoader.dll"/>
 			<Files>
 				<Match path="src/OGL_Renderer" pattern="*.cs" recurse="true"/>
 			</Files>
@@ -160,12 +162,12 @@
 					<XmlDocFile>SDL_PlatformManager.xml</XmlDocFile>		
 				</Options>
 			</Configuration>
-			<ReferencePath>bin</ReferencePath>
+			<ReferencePath>bin/Test/Release</ReferencePath>
 			<Reference name="System"/> 
-			<Reference name="CoreEngine"/> 
-			<Reference name="Tao.Sdl"/>
+			<Reference name="CoreEngine.dll"/> 
+			<Reference name="Tao.Sdl.dll"/>
 			<Files>
-				<Match path="src/Test" pattern="*.cs" recurse="true"/>
+				<Match path="src/SDL_PlatformManager" pattern="*.cs" recurse="true"/>
 			</Files>
 		</Project>
 	</Solution>
