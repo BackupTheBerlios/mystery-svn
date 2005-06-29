@@ -167,7 +167,7 @@
 			<Reference name="CoreEngine.dll"/> 
 			<Reference name="Tao.Sdl.dll"/>
 			<Files>
-				<Match path="src/SDL_PlatformManager" pattern="*.cs" recurse="true"/>
+				<Match path="src/SDL_WindowManager" pattern="*.cs" recurse="true"/>
 			</Files>
 		</Project>
 	</Solution>
