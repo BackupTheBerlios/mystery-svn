@@ -7,9 +7,12 @@ namespace Test
 {
 	class Program
 	{
+        public MEngine me = new MEngine();
+
 		private Vector3 v1;
 		private Vector3 v2;
 		private Vector3 v3;
+       
 
 		public Program()
 		{
@@ -20,9 +23,13 @@ namespace Test
 			v1 = new Vector3(27, 45, 23);
 			v2 = new Vector3(17, 35, 15);
             //Image_Loader.Get_CopyRight();
-			MEngine me = new MEngine();
+			
             me.Initialize_Engine(MEngine.Init_Flags.Graphics);
-            me.Platmgr.CreateWindow("MysteryEngine Window", 800, 600, 32, false);
+            me.Platmgr.CreateWindow("MysteryEngine Window", "icon.bmp", 800, 600, 32, false, true);
+
+            me.Platmgr.Setup();
+            me.Renderer.Setup();
+
 		}
 		static void Main(string[] args)
 		{
@@ -81,6 +88,14 @@ namespace Test
 			pro.v3 = Vector3Manipulation.CrossProduct(pro.v1, pro.v2);
 
 			Console.WriteLine("X: {0}, Y: {1}, Z: {2}", pro.v3.x, pro.v3.y, pro.v3.z);
-		}
+
+            pro.me.Renderer.ClearScreen(390);
+
+            while (true)
+            {
+               
+                pro.me.Platmgr.GlSwapBuffers();
+            }
+        }
 	}
 }
